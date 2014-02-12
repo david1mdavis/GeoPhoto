@@ -19,8 +19,8 @@ development:
   encoding: unicode
   database: geo-photo_development
   pool: 5
-  username: geo-photo
-  password:
+  username: postgres
+  password: 711sola711
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -48,8 +48,8 @@ test:
   encoding: unicode
   database: geo-photo_test
   pool: 5
-  username: geo-photo
-  password:
+  username: postgres
+  password: 711sola711
 
 production:
   adapter: postgresql

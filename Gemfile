@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem 'sinatra'
+gem 'unicorn'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -31,7 +33,8 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-
+gem 'paperclip','~>2.6.0'
+gem 'aws-sdk','~>1.3.4'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
