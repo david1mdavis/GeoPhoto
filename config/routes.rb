@@ -1,4 +1,5 @@
 GeoPhoto::Application.routes.draw do
+  devise_for :users
     resources :photos, :only => [:index, :show, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.

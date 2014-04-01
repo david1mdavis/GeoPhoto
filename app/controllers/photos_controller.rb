@@ -14,7 +14,8 @@ class PhotosController < ApplicationController
      #params.require(:photo).permit(:lat, :lng , :image => [:tempfile, :filename, :content_type, :header, :original_filename])
      
      #params.require(:photo).permit(:lat, :lng, :image)
-     params.require(:photo).permit(:image, :lat, :lng)
+     params.require(:photo).permit( :image, :lat, :lng)
+    # params.require(:photo).permit( :image URI.parse(URI.unescape(params['url'])), :lat, :lng)
      #params.require(:photo).permit(photos_attributes: :image)
      #params.require(:photo).permit(:lat, :lng , images_attributes: [:image])    
    
@@ -32,7 +33,28 @@ class PhotosController < ApplicationController
     respond_with(@photo)
   end
   
+  
   def create
+   
+   # print S3_CREDENTIALS
+   
+    print "--------------------"
+  
+        print "xxxxxxxxxxxxxxxxx"
+   # Photos.create image: URI.parse(URI.unescape(params['url']))
+    #@photo = Photo.create( image: params[:url])
+    @photo = Photo.create(photo_params)
+
+
+  #  @photo = Photo.new( photo_params)
+  #  @photo.save
+  #  print @photo
+  
+    print "++++++++++++++++++++"
+   respond_with(@photo)
+  end
+  
+  def create1
     print S3_CREDENTIALS
    
     print "--------------------"

@@ -5,9 +5,9 @@ class Photo < ActiveRecord::Base
    #attr_accessor :image_file_name 
    #attr_accessor :image_content_type
    
-  has_attached_file :image, :styles => {  :thumbnail => "100x100>" }, 
-  :storage => :s3,
-  :s3_credentials => S3_CREDENTIALS
+   has_attached_file :image, styles: { thumbnail: "200x200" }
+   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+   validates :image, presence: true
  
  # validates_attachment_content_type :image, :content_type => /^image\/(jpg|jpeg|pjpeg|png|x-png|gif)$/, :message => 'file type is not allowed (only jpeg/png/gif images)'
  
